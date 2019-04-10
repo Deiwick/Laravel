@@ -23,13 +23,17 @@
                         <td>{{ $producto->descripcion }} </td>
                         <td>{{ $producto->stock }} </td>
                         <td> 
-                            <a href="{{ route ('Productos.show', $producto->id) }} ">Ver</a> 
+                            <a href="{{ route ('Productos.show', $producto->id) }} " class="btn btn-link">Ver</a> 
                         </td>
                         <td> 
-                            <a href="{{ route ('Productos.edit', $producto->id) }} ">Modificar</a> 
+                            <a href="{{ route ('Productos.edit', $producto->id) }}  " class="btn btn-link">Modificar</a> 
                         </td>
                         <td> 
-                            <a href="{{ route ('Productos.destroy', $producto->id) }} ">Borrar</a> 
+                            <form action= "{{ route ('Productos.destroy', $producto->id) }}" method="POST">
+                                {{ csrf_field() }}
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button class="btn btn-link">Borrar</button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach
