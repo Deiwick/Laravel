@@ -14,4 +14,10 @@ class ProductoController extends Controller
         $productos = Producto::orderBy('id','ASC')->paginate();
         return view('productos.index',compact('productos'));
     }
+
+    public function show($id)
+    {
+        $producto = Producto::find($id);
+        return view('productos.show',compact('producto'));
+    }
 }

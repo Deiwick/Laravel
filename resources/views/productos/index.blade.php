@@ -22,9 +22,15 @@
                         <td>{{ $producto->nombre }} </td>
                         <td>{{ $producto->descripcion }} </td>
                         <td>{{ $producto->stock }} </td>
-                        <td> <a>Ver</a> </td>
-                        <td> <a>Modificar</a> </td>
-                        <td> <a>Borrar</a> </td>
+                        <td> 
+                            <a href="{{ route ('Productos.show', $producto->id) }} ">Ver</a> 
+                        </td>
+                        <td> 
+                            <a href="{{ route ('Productos.edit', $producto->id) }} ">Modificar</a> 
+                        </td>
+                        <td> 
+                            <a href="{{ route ('Productos.destroy', $producto->id) }} ">Borrar</a> 
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
