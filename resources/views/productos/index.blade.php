@@ -5,6 +5,9 @@
         <h2> 
             Listado de productos:
         </h2>
+        <a href="{{ route ('Productos.create') }} " class="btn btn-default pull-right">Atras</a> 
+
+        @include('productos.fragments.info')
         <table class="table table-hover table-striped">
             <thead>
                 <tr>
